@@ -4,6 +4,7 @@ import { MultiOwnerModularAccount } from "@alchemy/aa-accounts";
 import { User, createAlchemySmartAccountClient } from "@alchemy/aa-alchemy";
 import { useState } from "react";
 import { optimismSepolia } from "viem/chains";
+import { SendUOButton } from "./SendUOButton";
 
 export interface ProfileCardProps {
   user: User;
@@ -54,6 +55,7 @@ export const ProfileCard = ({ user, account }: ProfileCardProps) => {
           <strong>Email</strong>
           <code className="break-words">{user?.email}</code>
         </div>
+        <SendUOButton provider={provider} />
       </div>
     </div>
   );
