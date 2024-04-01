@@ -20,35 +20,35 @@ export const SendUOButton = ({ provider }: SendUOButtonProps) => {
 
   return (
     <div className="flex flex-col">
-      {txnHash == null && !isPendingUserOperation && (
+      {txnHash == null ? (
         <button
-          className="w-full hover:bg-slate-700 p-2 rounded-lg transition ease-in-out duration-500 transform hover:scale-105"
+          className="w-full transform rounded-lg bg-[#363FF9] p-3 font-semibold text-[#FBFDFF] transition duration-500 ease-in-out hover:scale-105 disabled:bg-[#C0D4FF] disabled:hover:scale-100 dark:disabled:bg-[#4252C5]"
           onClick={() => sendUserOperation()}
+          disabled={isPendingUserOperation}
         >
-          {isSendUserOperationError
-            ? "Error sending money. Try again!"
-            : "Send money to Vitalik!"}
-        </button>
-      )}
-      {isPendingUserOperation && (
-        <div className="w-full flex flex-row items-center justify-center gap-2 bg-slate-700 p-2 rounded-lg">
-          <div>Sending...</div>
-          <div className="flex items-center justify-center">
-            <div
-              className="inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-current border-e-transparent align-[-0.125em] text-surface motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white"
-              role="status"
-            ></div>
+          <div className="flex flex-row items-center justify-center gap-3">
+            {isPendingUserOperation && (
+              // Loading spinner
+              <div
+                className="text-surface inline-block h-4 w-4 animate-spin rounded-full border-2 border-solid border-current border-e-transparent align-[-0.125em] motion-reduce:animate-[spin_1.5s_linear_infinite] dark:text-white"
+                role="status"
+              ></div>
+            )}
+            {isPendingUserOperation
+              ? "Sending"
+              : isSendUserOperationError
+                ? "An error occurred. Try again!"
+                : "Send a test transaction"}
           </div>
-        </div>
-      )}
-      {txnHash != null && (
+        </button>
+      ) : (
         <a
           href={`${optimismSepolia.blockExplorers.default.url}/tx/${txnHash}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full text-center hover:bg-slate-700 p-2 rounded-lg transition ease-in-out duration-500 transform hover:scale-105"
+          className="w-full transform rounded-lg bg-[#363FF9] p-3 font-semibold transition duration-500 ease-in-out hover:scale-105"
         >
-          See Txn Details
+          View transaction details
         </a>
       )}
     </div>

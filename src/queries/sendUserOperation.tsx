@@ -7,7 +7,7 @@ import { Address, Chain, Transport } from "viem";
 export const useSendUserOperation = (
   provider:
     | AlchemySmartAccountClient<Transport, Chain, MultiOwnerModularAccount>
-    | undefined
+    | undefined,
 ) => {
   const sendUO = useCallback(async () => {
     if (provider == null) {

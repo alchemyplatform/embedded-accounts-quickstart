@@ -8,35 +8,38 @@ export interface LoginCardProps {
   signer: AlchemySigner | undefined;
 }
 
-export const SignInCard = ({ signer }: LoginCardProps) => {
+export const LogInCard = ({ signer }: LoginCardProps) => {
   const [email, setEmail] = useState<string>("");
   const onEmailChange = useCallback(
     (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value),
-    []
+    [],
   );
 
   const { isAuthenticatingUser, authenticateUser } =
     useAuthenticateUser(signer);
 
   return (
-    <div className="flex flex-row bg-slate-500 rounded-lg p-4 justify-center min-w-80">
+    <div className="flex min-w-80 flex-row justify-center rounded-lg bg-white p-10 dark:bg-[#0F172A]">
       {isAuthenticatingUser ? (
-        <div>Check Your Email!</div>
+        <div className="text-[18px] font-semibold">Check your email!</div>
       ) : (
-        <div className="flex flex-col gap-4">
-          <div className="text-lg">Sign in to the Embedded Accounts Demo!</div>
-          <div className="flex flex-row justify-between gap-4">
+        <div className="flex flex-col gap-8">
+          <div className="text-[18px] font-semibold">
+            Log in to the Embedded Accounts Demo!
+          </div>
+          <div className="flex flex-col justify-between gap-6">
             <input
-              className="dark:bg-slate-700 dark:text-white p-2 rounded-lg"
+              className="rounded-lg border border-[#CBD5E1] p-3 dark:border-[#475569] dark:bg-slate-700 dark:text-white dark:placeholder:text-[#E2E8F0]"
               type="email"
+              placeholder="Enter your email"
               value={email}
               onChange={onEmailChange}
             />
             <button
-              className="w-full hover:bg-slate-700 p-2 rounded-lg transition ease-in-out duration-500 transform hover:scale-105"
+              className="w-full transform rounded-lg bg-[#363FF9] p-3 font-semibold text-[#FBFDFF] transition duration-500 ease-in-out hover:scale-105"
               onClick={() => authenticateUser({ type: "email", email })}
             >
-              Sign in
+              Log in
             </button>
           </div>
         </div>

@@ -2,12 +2,13 @@ import { createMultiOwnerModularAccount } from "@alchemy/aa-accounts";
 import { AlchemySigner } from "@alchemy/aa-alchemy";
 import { createBundlerClient, optimismSepolia } from "@alchemy/aa-core";
 import { useMutation, useQuery } from "@tanstack/react-query";
-import { useSearchParams } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import { useCallback } from "react";
 import { custom, http } from "viem";
 
 export const useAuthenticateUser = (signer: AlchemySigner | undefined) => {
   const params = useSearchParams();
+  const router = useRouter();
 
   const authUser = useCallback(async () => {
     if (params.get("bundle") != null) {
@@ -16,7 +17,7 @@ export const useAuthenticateUser = (signer: AlchemySigner | undefined) => {
         bundle: params.get("bundle")!,
       });
 
-      window.location.href = "/";
+      router.push("/");
     }
 
     const user = await signer!.getAuthDetails().catch(() => {
@@ -37,7 +38,7 @@ export const useAuthenticateUser = (signer: AlchemySigner | undefined) => {
       : undefined;
 
     return { user, account };
-  }, [params, signer]);
+  }, [params, signer, router]);
 
   const { mutate: authenticateUser, isPending: isAuthenticatingUser } =
     useMutation({

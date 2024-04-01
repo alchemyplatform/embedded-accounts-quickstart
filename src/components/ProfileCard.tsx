@@ -31,29 +31,29 @@ export const ProfileCard = ({ user, account }: ProfileCardProps) => {
       gasManagerConfig: {
         policyId: gasManagerPolicyId,
       },
+      opts: {
+        txMaxRetries: 20,
+      },
     });
   });
 
   return (
-    <div className="flex flex-row bg-slate-500 rounded-lg p-4">
-      <div className="flex flex-col gap-4">
-        <div className="text-lg">Welcome to your profile!</div>
-        <div className="flex flex-col gap-2">
-          <strong>Account Address</strong>
-          <code className="break-words">
-            <a
-              href={`${optimismSepolia.blockExplorers.default.url}/address/${provider?.account.address}`}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="w-full text-center hover:bg-slate-700 p-2 rounded-lg transition ease-in-out duration-500 transform hover:scale-105"
-            >
+    <div className="flex flex-row rounded-lg bg-white p-10 dark:bg-[#0F172A]">
+      <div className="flex flex-col gap-8">
+        <div className="text-lg font-semibold">Welcome to your profile!</div>
+        <div className="flex flex-col gap-4">
+          <div className="flex flex-col gap-2">
+            <div>Account address</div>
+            <div className="text-wrap rounded-lg border p-3 dark:border-[#475569] dark:bg-[#1F2937] dark:text-[#CBD5E1]">
               {provider?.account.address}
-            </a>
-          </code>
-        </div>
-        <div className="flex flex-col gap-2">
-          <strong>Email</strong>
-          <code className="break-words">{user?.email}</code>
+            </div>
+          </div>
+          <div className="flex flex-col gap-2">
+            <div>Email</div>
+            <div className="text-wrap rounded-lg border p-3 dark:border-[#475569] dark:bg-[#1F2937] dark:text-[#CBD5E1]">
+              {user?.email}
+            </div>
+          </div>
         </div>
         <SendUOButton provider={provider} />
       </div>
