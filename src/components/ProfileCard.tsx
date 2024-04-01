@@ -44,13 +44,13 @@ export const ProfileCard = ({ user, account }: ProfileCardProps) => {
         <div className="flex flex-col gap-4">
           <div className="flex flex-col gap-2">
             <div>Account address</div>
-            <div className="text-wrap rounded-lg border p-3 dark:border-[#475569] dark:bg-[#1F2937] dark:text-[#CBD5E1]">
+            <div className="text-wrap rounded-lg p-3 dark:bg-[#1F2937] dark:text-[#CBD5E1]">
               {provider?.account.address}
             </div>
           </div>
           <div className="flex flex-col gap-2">
             <div>Email</div>
-            <div className="text-wrap rounded-lg border p-3 dark:border-[#475569] dark:bg-[#1F2937] dark:text-[#CBD5E1]">
+            <div className="text-wrap rounded-lg p-3 dark:bg-[#1F2937] dark:text-[#CBD5E1]">
               {user?.email}
             </div>
           </div>

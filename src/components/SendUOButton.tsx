@@ -46,7 +46,7 @@ export const SendUOButton = ({ provider }: SendUOButtonProps) => {
           href={`${arbitrumSepolia.blockExplorers.default.url}/tx/${txnHash}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="w-full transform rounded-lg bg-[#363FF9] p-3 font-semibold transition duration-500 ease-in-out hover:scale-105"
+          className="w-full transform rounded-lg bg-[#363FF9] p-3 font-semibold text-[#FBFDFF] transition duration-500 ease-in-out hover:scale-105 dark:disabled:bg-[#4252C5]"
         >
           View transaction details
         </a>
