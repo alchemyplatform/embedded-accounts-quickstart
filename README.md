@@ -51,7 +51,7 @@ Ensure your `.env` has values for `ALCHEMY_API_KEY` and `NEXT_PUBLIC_ALCHEMY_GAS
 Then, run:
 
 ```bash
-npm
+npm install
 npm run build
 npm run dev
 ```
