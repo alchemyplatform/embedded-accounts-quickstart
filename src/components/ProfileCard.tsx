@@ -1,16 +1,10 @@
 "use client";
 
-import { MultiOwnerModularAccount } from "@alchemy/aa-accounts";
-import { User } from "@alchemy/aa-alchemy";
-import { useSmartAccountClient } from "@alchemy/aa-alchemy/react";
+import { useSmartAccountClient, useUser } from "@alchemy/aa-alchemy/react";
 import { SendUOButton } from "./SendUOButton";
 
-export interface ProfileCardProps {
-  user: User;
-  account: MultiOwnerModularAccount;
-}
-
-export const ProfileCard = ({ user, account }: ProfileCardProps) => {
+export const ProfileCard = () => {
+  const user = useUser();
   const { client } = useSmartAccountClient({
     type: "MultiOwnerModularAccount",
   });

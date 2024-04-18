@@ -22,7 +22,7 @@ export default function Home() {
           ></div>
         </div>
       ) : user != null && account != null ? (
-        <ProfileCard user={user} account={account} />
+        <ProfileCard />
       ) : (
         <LogInCard />
       )}
