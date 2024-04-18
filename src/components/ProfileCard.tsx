@@ -1,40 +1,12 @@
 "use client";
 
-import { MultiOwnerModularAccount } from "@alchemy/aa-accounts";
-import { User, createAlchemySmartAccountClient } from "@alchemy/aa-alchemy";
-import { useState } from "react";
-import { arbitrumSepolia } from "viem/chains";
+import { useSmartAccountClient, useUser } from "@alchemy/aa-alchemy/react";
 import { SendUOButton } from "./SendUOButton";
 
-export interface ProfileCardProps {
-  user: User;
-  account: MultiOwnerModularAccount;
-}
-
-export const ProfileCard = ({ user, account }: ProfileCardProps) => {
-  const [provider] = useState(() => {
-    if (typeof document === "undefined") {
-      return undefined;
-    }
-
-    const gasManagerPolicyId =
-      process.env.NEXT_PUBLIC_ALCHEMY_GAS_MANAGER_POLICY_ID;
-
-    if (gasManagerPolicyId == null) {
-      throw new Error("Missing gas policy ID");
-    }
-
-    return createAlchemySmartAccountClient({
-      chain: arbitrumSepolia,
-      rpcUrl: "/api/rpc",
-      account,
-      gasManagerConfig: {
-        policyId: gasManagerPolicyId,
-      },
-      opts: {
-        txMaxRetries: 20,
-      },
-    });
+export const ProfileCard = () => {
+  const user = useUser();
+  const { client } = useSmartAccountClient({
+    type: "MultiOwnerModularAccount",
   });
 
   return (
@@ -45,7 +17,7 @@ export const ProfileCard = ({ user, account }: ProfileCardProps) => {
           <div className="flex flex-col gap-2">
             <div>Account address</div>
             <div className="text-wrap rounded-lg p-3 dark:bg-[#1F2937] dark:text-[#CBD5E1]">
-              {provider?.account.address}
+              {client?.account.address}
             </div>
           </div>
           <div className="flex flex-col gap-2">
@@ -55,7 +27,7 @@ export const ProfileCard = ({ user, account }: ProfileCardProps) => {
             </div>
           </div>
         </div>
-        <SendUOButton provider={provider} />
+        <SendUOButton />
       </div>
     </div>
   );
