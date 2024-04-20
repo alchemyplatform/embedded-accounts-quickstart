@@ -9,9 +9,9 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@alchemy/aa-accounts": "^3.8.1",
-    "@alchemy/aa-alchemy": "^3.8.1",
-    "@alchemy/aa-core": "^3.8.1",
+    "@alchemy/aa-accounts": "^3.8.2-alpha.1",
+    "@alchemy/aa-alchemy": "^3.9.0-alpha.3",
+    "@alchemy/aa-core": "^3.8.2-alpha.1",
     "@tanstack/react-query": "5.28.9",
     "next": "14.1.4",
     "react": "^18",

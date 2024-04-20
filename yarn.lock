@@ -12,20 +12,20 @@
   resolved "https://registry.yarnpkg.com/@adraffy/ens-normalize/-/ens-normalize-1.10.0.tgz#d2a39395c587e092d77cbbc80acf956a54f38bf7"
   integrity sha512-nA9XHtlAkYfJxY7bce8DcN7eKxWWCWkU+1GR9d+U6MbNpfwQp8TI7vqOsBsMcHoT4mBu2kypKoSKnghEzOOq5Q==
 
-"@alchemy/aa-accounts@^3.8.1":
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/@alchemy/aa-accounts/-/aa-accounts-3.8.1.tgz#290e290b7047d8d29deb2b5959abaf839786f553"
-  integrity sha512-MoBbn+LTNBZIQTWlx0HIbXROJ9AcWhG0EOcbRMq0B+714/GogliJ5R/rUwQktxy+SfQa9K4Sh7q3kXFUgmFIdA==
+"@alchemy/aa-accounts@^3.8.2-alpha.0", "@alchemy/aa-accounts@^3.8.2-alpha.1":
+  version "3.8.2-alpha.1"
+  resolved "https://registry.yarnpkg.com/@alchemy/aa-accounts/-/aa-accounts-3.8.2-alpha.1.tgz#3513d3a2158f5ffc3709458d96463d4fb9a7b06a"
+  integrity sha512-BvgHjFyAio9Qa33Xvw2+eLAVDW2DDkXKhoGt/EVeFZhSlgd6F2lexA2S8KCGrEKUQSFmgeNsC4sqiRyelJeuRg==
   dependencies:
-    "@alchemy/aa-core" "^3.8.1"
+    "@alchemy/aa-core" "^3.8.2-alpha.1"
     viem "2.8.6"
 
-"@alchemy/aa-alchemy@^3.8.1":
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/@alchemy/aa-alchemy/-/aa-alchemy-3.8.1.tgz#05b76657d871d98f426fe3eb365f5e0b349eed37"
-  integrity sha512-EmE3g7nN74v6+u8EUonHDJDDRbI6XsPpXYaSBNJsf9erjnw001z1+2GnUZdqa4NFJlJGdCboxX1sM5RJFO2IXA==
+"@alchemy/aa-alchemy@^3.9.0-alpha.3":
+  version "3.9.0-alpha.3"
+  resolved "https://registry.yarnpkg.com/@alchemy/aa-alchemy/-/aa-alchemy-3.9.0-alpha.3.tgz#7bf22cddac66ba8b949947929b909372768ab806"
+  integrity sha512-HYCH69vyHPlGzFiEA9y9uT7z4z3ZTLGnY2emOs30JDpdGfuqBamIr7LxU04U6xVWHZB8RN2ZNK/0qxbZCOuAJQ==
   dependencies:
-    "@alchemy/aa-core" "^3.8.1"
+    "@alchemy/aa-core" "^3.8.2-alpha.1"
     "@turnkey/http" "^2.6.2"
     "@turnkey/iframe-stamper" "^1.0.0"
     "@turnkey/viem" "^0.4.8"
@@ -34,13 +34,13 @@
     viem "2.8.6"
     zustand "^4.5.2"
   optionalDependencies:
-    "@alchemy/aa-accounts" "^3.8.1"
+    "@alchemy/aa-accounts" "^3.8.2-alpha.0"
     alchemy-sdk "^3.0.0"
 
-"@alchemy/aa-core@^3.8.1":
-  version "3.8.1"
-  resolved "https://registry.yarnpkg.com/@alchemy/aa-core/-/aa-core-3.8.1.tgz#5c961fbb0f342ed54a1af0329b81172144e52530"
-  integrity sha512-ilcIAG3OheJ3pm+0djZRcYXgNebZw8w/VBo0gcfu2B6V5cUnF0PPUYmj1ORR1ZxwQrP1Gnnl9TM3Bv+c4U25GQ==
+"@alchemy/aa-core@^3.8.2-alpha.1":
+  version "3.8.2-alpha.1"
+  resolved "https://registry.yarnpkg.com/@alchemy/aa-core/-/aa-core-3.8.2-alpha.1.tgz#195ef93d45942f2d8fc077abd5dd02dc12ed008f"
+  integrity sha512-zrEiuo4vuZq8vq5Nba5xztSIQFDW3tFK93mFnoUhjxUeJYZ7By8YR/A8Q8nE8jPsfiw9x9S334IYGaaetcIctg==
   dependencies:
     abitype "^0.8.3"
     eventemitter3 "^5.0.1"
