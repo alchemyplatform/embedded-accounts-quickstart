@@ -6,13 +6,13 @@ import { arbitrumSepolia } from "@alchemy/aa-core";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { PropsWithChildren, Suspense } from "react";
 
-export const Providers = (props: PropsWithChildren) => {
-  const queryClient = new QueryClient();
-  const config = createConfig({
-    rpcUrl: "/api/rpc",
-    chain: arbitrumSepolia,
-  });
+const queryClient = new QueryClient();
+const config = createConfig({
+  rpcUrl: "/api/rpc",
+  chain: arbitrumSepolia,
+});
 
+export const Providers = (props: PropsWithChildren) => {
   return (
     <Suspense>
       <QueryClientProvider client={queryClient}>

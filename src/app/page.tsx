@@ -3,7 +3,6 @@
 import { LogInCard } from "@/components/LogInCard";
 import { ProfileCard } from "@/components/ProfileCard";
 import { useAccount, useUser } from "@alchemy/aa-alchemy/react";
-import { TurnkeyIframe } from "../components/TurnkeyIframe";
 
 export default function Home() {
   const { account, isLoadingAccount } = useAccount({
@@ -26,7 +25,6 @@ export default function Home() {
       ) : (
         <LogInCard />
       )}
-      <TurnkeyIframe />
     </main>
   );
 }
