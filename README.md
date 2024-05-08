@@ -6,7 +6,9 @@ The quickstart documentation is available at [Alchemy's Account Kit docs](https:
 
 It leverages Alchemy Embedded Accounts using [Account Kit](https://accountkit.alchemy.com/) and the [Alchemy Signer](https://accountkit.alchemy.com/packages/aa-alchemy/signer/overview.html), [Modular Smart Contract Account](https://github.com/alchemyplatform/modular-account), [Rundler](https://github.com/alchemyplatform/rundler) and [Gas Manager](https://docs.alchemy.com/docs/gas-manager-services).
 
-Before running this application, copy the `.env.sample` file to a new `.env`, and follow the steps below to configure your environment variables.
+Before running this application, copy the `.env.sample` file to a new `.env`, and follow the steps below to configure your environment variables. 
+
+This demo currently uses Arbitrum Sepolia.
 
 ## Configure Your Embedded Accounts
 
@@ -16,9 +18,16 @@ Create an Alchemy API key, an Embedded Accounts Config, and a Gas Manager Policy
 
 The Alchemy API Key will allow you to read and write to blockchains through Alchemy’s reliable infrastructure. In this context, the API Key will let you created Embedded Accounts onchain for your users, and send UserOperations on behalf of those accounts.
 
-To create an API Key, go to [https://dashboard.alchemy.com](https://dashboard.alchemy.com), sign up for an account, and go through the onboarding. Then on the [apps](https://dashboard.alchemy.com/apps) page, create an Alchemy app for the Optimism Sepolia network.
+To create an API Key, go to [https://dashboard.alchemy.com](https://dashboard.alchemy.com), sign up for an account, and go through the onboarding. Then on the [apps](https://dashboard.alchemy.com/apps) page, create an Alchemy app for the **Arbitrum Sepolia network**.
 
 Click the API Key button in the top right corner and copy-paste it into the `.env` file of your application as an environment variable called `ALCHEMY_API_KEY`.
+
+> ❗️ Chain configuration
+>
+> This demo currently uses Arbitrum Sepolia. If you would like to use a different chain please select the chain in the app creation step above AND update the chain imports and reference in 3 places (the chain must be imported from the @alchemy/aa-core package):
+> 1. [src/app/providers.tsx](https://github.com/alchemyplatform/embedded-accounts-quickstart/blob/3258d95067389e80d42a200a6c84cbf64e44672c/src/app/providers.tsx#L13)
+> 2. [src/components/SendUOButton.tsx](https://github.com/alchemyplatform/embedded-accounts-quickstart/blob/3258d95067389e80d42a200a6c84cbf64e44672c/src/components/SendUOButton.tsx#L62)
+> 3. [src/app/api/rpc/route.ts](https://github.com/alchemyplatform/embedded-accounts-quickstart/blob/3258d95067389e80d42a200a6c84cbf64e44672c/src/app/api/rpc/route.ts#L6)
 
 ### Alchemy Embedded Accounts Config
 
