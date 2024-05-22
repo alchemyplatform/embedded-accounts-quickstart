@@ -12,35 +12,40 @@
   resolved "https://registry.yarnpkg.com/@adraffy/ens-normalize/-/ens-normalize-1.10.0.tgz#d2a39395c587e092d77cbbc80acf956a54f38bf7"
   integrity sha512-nA9XHtlAkYfJxY7bce8DcN7eKxWWCWkU+1GR9d+U6MbNpfwQp8TI7vqOsBsMcHoT4mBu2kypKoSKnghEzOOq5Q==
 
-"@alchemy/aa-accounts@^3.8.2-alpha.0", "@alchemy/aa-accounts@^3.8.2-alpha.1":
-  version "3.8.2-alpha.1"
-  resolved "https://registry.yarnpkg.com/@alchemy/aa-accounts/-/aa-accounts-3.8.2-alpha.1.tgz#3513d3a2158f5ffc3709458d96463d4fb9a7b06a"
-  integrity sha512-BvgHjFyAio9Qa33Xvw2+eLAVDW2DDkXKhoGt/EVeFZhSlgd6F2lexA2S8KCGrEKUQSFmgeNsC4sqiRyelJeuRg==
+"@alchemy/aa-accounts@3.14.1", "@alchemy/aa-accounts@^3.14.1":
+  version "3.14.1"
+  resolved "https://registry.yarnpkg.com/@alchemy/aa-accounts/-/aa-accounts-3.14.1.tgz#8d406c5f928db328b3a96a2d1a800d5a506d9e73"
+  integrity sha512-2dTnnpBMyT15LCo4NGiVIakqVJhhnv9pivsN5hSE08Vm2crKl9BVQ6MPQHM5qsqzKB5h4csIM9yHBRFbAbp0xQ==
   dependencies:
-    "@alchemy/aa-core" "^3.8.2-alpha.1"
+    "@alchemy/aa-core" "^3.12.3"
     viem "2.8.6"
 
-"@alchemy/aa-alchemy@^3.9.0-alpha.3":
-  version "3.9.0-alpha.3"
-  resolved "https://registry.yarnpkg.com/@alchemy/aa-alchemy/-/aa-alchemy-3.9.0-alpha.3.tgz#7bf22cddac66ba8b949947929b909372768ab806"
-  integrity sha512-HYCH69vyHPlGzFiEA9y9uT7z4z3ZTLGnY2emOs30JDpdGfuqBamIr7LxU04U6xVWHZB8RN2ZNK/0qxbZCOuAJQ==
+"@alchemy/aa-alchemy@3.14.1":
+  version "3.14.1"
+  resolved "https://registry.yarnpkg.com/@alchemy/aa-alchemy/-/aa-alchemy-3.14.1.tgz#66a12acd95eddbffe69d15330de1f30dc092d28b"
+  integrity sha512-s4IlSEm0K8elq08qRvIZn6AQhb7sagpdfSGdpyh5gtr4/bENdk5EM+xVd00G5BwgOCegB8tn08qyqMrz4pVvuA==
   dependencies:
-    "@alchemy/aa-core" "^3.8.2-alpha.1"
+    "@alchemy/aa-core" "^3.12.3"
+    "@tanstack/react-form" "^0.19.4"
+    "@tanstack/zod-form-adapter" "^0.19.4"
     "@turnkey/http" "^2.6.2"
     "@turnkey/iframe-stamper" "^1.0.0"
     "@turnkey/viem" "^0.4.8"
     "@turnkey/webauthn-stamper" "^0.4.3"
     eventemitter3 "^5.0.1"
+    js-cookie "^3.0.5"
+    tailwindcss "^3.4.3"
     viem "2.8.6"
+    zod "^3.22.4"
     zustand "^4.5.2"
   optionalDependencies:
-    "@alchemy/aa-accounts" "^3.8.2-alpha.0"
+    "@alchemy/aa-accounts" "^3.14.1"
     alchemy-sdk "^3.0.0"
 
-"@alchemy/aa-core@^3.8.2-alpha.1":
-  version "3.8.2-alpha.1"
-  resolved "https://registry.yarnpkg.com/@alchemy/aa-core/-/aa-core-3.8.2-alpha.1.tgz#195ef93d45942f2d8fc077abd5dd02dc12ed008f"
-  integrity sha512-zrEiuo4vuZq8vq5Nba5xztSIQFDW3tFK93mFnoUhjxUeJYZ7By8YR/A8Q8nE8jPsfiw9x9S334IYGaaetcIctg==
+"@alchemy/aa-core@3.12.3", "@alchemy/aa-core@^3.12.3":
+  version "3.12.3"
+  resolved "https://registry.yarnpkg.com/@alchemy/aa-core/-/aa-core-3.12.3.tgz#25ddd6533f0fe0590c28eba7d0a444c4f168ea64"
+  integrity sha512-nU2pvGIsWI9Wwo3aNcfke1ZJJiec5rmqkh7McTRK6G8ff1gE0yGZUBzd/73rsdWGmhBN8G5VmX0KN016+amzVQ==
   dependencies:
     abitype "^0.8.3"
     eventemitter3 "^5.0.1"
@@ -630,10 +635,27 @@
   dependencies:
     tslib "^2.4.0"
 
+"@tanstack/form-core@0.19.5":
+  version "0.19.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/form-core/-/form-core-0.19.5.tgz#8741513e5e2914211430c1c22f5aa173b0e9fba1"
+  integrity sha512-2ocFAnWTY3sxXemJvKArllnPNMmo9LkviSX88iUXcaClKutvJLfAc+a/lM00zhDKY9G3abXuZCp1OvGmeagszA==
+  dependencies:
+    "@tanstack/store" "^0.3.1"
+
 "@tanstack/query-core@5.28.9":
   version "5.28.9"
   resolved "https://registry.yarnpkg.com/@tanstack/query-core/-/query-core-5.28.9.tgz#170a7a8794ab73aeffbaf711ac62126479a5d026"
   integrity sha512-hNlfCiqZevr3GRVPXS3MhaGW5hjcxvCsIQ4q6ff7EPlvFwYZaS+0d9EIIgofnegDaU2BbCDlyURoYfRl5rmzow==
+
+"@tanstack/react-form@^0.19.4":
+  version "0.19.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-form/-/react-form-0.19.5.tgz#9d74f405186fb9dbfa4f6332e15bb85ac9929a0d"
+  integrity sha512-tvuc++2aBt3vEDtHmDlFJYiynPBZ1S6MPGdG8Zs0rNEBNM3VT1khiafXTzPoWpmI6TIfyD/JBuWizFxty7aCIA==
+  dependencies:
+    "@tanstack/form-core" "0.19.5"
+    "@tanstack/react-store" "^0.3.1"
+    decode-formdata "^0.4.0"
+    rehackt "^0.0.3"
 
 "@tanstack/react-query@5.28.9":
   version "5.28.9"
@@ -641,6 +663,26 @@
   integrity sha512-vwifBkGXsydsLxFOBMe3+f8kvtDoqDRDwUNjPHVDDt+FoBetCbOWAUHgZn4k+CVeZgLmy7bx6aKeDbe3e8koOQ==
   dependencies:
     "@tanstack/query-core" "5.28.9"
+
+"@tanstack/react-store@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@tanstack/react-store/-/react-store-0.3.1.tgz#f93896da40f91b4385aca9448d3ccf914b314b50"
+  integrity sha512-PfV271d345It6FdcX4c9gd+llKGddtvau8iJnybTAWmYVyDeFWfIIkiAJ5iNITJmI02AzqgtcV3QLNBBlpBUjA==
+  dependencies:
+    "@tanstack/store" "0.3.1"
+    use-sync-external-store "^1.2.0"
+
+"@tanstack/store@0.3.1", "@tanstack/store@^0.3.1":
+  version "0.3.1"
+  resolved "https://registry.yarnpkg.com/@tanstack/store/-/store-0.3.1.tgz#317bfb7eedd8cc4ee32c4e52740abbf1bd311d36"
+  integrity sha512-A49KN8SpLMWaNmZGPa9K982RQ81W+m7W6iStcQVeKeVS70JZRqkF0fDwKByREPq6qz9/kS0aQFOPQ0W6wIeU5g==
+
+"@tanstack/zod-form-adapter@^0.19.4":
+  version "0.19.5"
+  resolved "https://registry.yarnpkg.com/@tanstack/zod-form-adapter/-/zod-form-adapter-0.19.5.tgz#2cc18d0b082906848c05c4c49e60185174b5aba6"
+  integrity sha512-yDucWQgAvDSqy5HuYnHgnW1SWN5MBTl8p+qPw0VK/da8r04LTINGhbwjiZEo3GF4LO9vo9i/ISsO+3mD+Psr5g==
+  dependencies:
+    "@tanstack/form-core" "0.19.5"
 
 "@turnkey/api-key-stamper@0.4.0":
   version "0.4.0"
@@ -1178,6 +1220,11 @@ chokidar@^3.5.3:
   optionalDependencies:
     fsevents "~2.3.2"
 
+classnames@^2.5.1:
+  version "2.5.1"
+  resolved "https://registry.yarnpkg.com/classnames/-/classnames-2.5.1.tgz#ba774c614be0f016da105c858e7159eae8e7687b"
+  integrity sha512-saHYOzhIQs6wy2sVxTM6bUDsQO4F50V9RQ22qBpEdCW+I+/Wmke2HOl6lS6dTpdxVhb88/I6+Hs+438c3lfUow==
+
 client-only@0.0.1:
   version "0.0.1"
   resolved "https://registry.yarnpkg.com/client-only/-/client-only-0.0.1.tgz#38bba5d403c41ab150bff64a95c85013cf73bca1"
@@ -1305,6 +1352,11 @@ debug@^4.3.1, debug@^4.3.2, debug@^4.3.4:
   integrity sha512-PRWFHuSU3eDtQJPvnNY7Jcket1j0t5OuOsFzPPzsekD52Zl8qUfFIPEiswXqIvHWGVHOgX+7G/vCNNhehwxfkQ==
   dependencies:
     ms "2.1.2"
+
+decode-formdata@^0.4.0:
+  version "0.4.0"
+  resolved "https://registry.yarnpkg.com/decode-formdata/-/decode-formdata-0.4.0.tgz#485715a37417868435a92d2144b39646fe654aae"
+  integrity sha512-/OMUlsRLrSgHPOWCwembsFFTT4DY7Ts9GGlwK8v9yeLOyYZSPKIfn/1oOuV9UmpQ9CZi5JeyT8edunRoBOOl5g==
 
 deep-is@^0.1.3:
   version "0.1.4"
@@ -2383,6 +2435,11 @@ jiti@^1.21.0:
   resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.21.0.tgz#7c97f8fe045724e136a397f7340475244156105d"
   integrity sha512-gFqAIbuKyyso/3G2qhiO2OM6shY6EPP/R0+mkDbyspxKazh8BXDC5FiFsUjlczgdNz/vfra0da2y+aHrusLG/Q==
 
+js-cookie@^3.0.5:
+  version "3.0.5"
+  resolved "https://registry.yarnpkg.com/js-cookie/-/js-cookie-3.0.5.tgz#0b7e2fd0c01552c58ba86e0841f94dc2557dcdbc"
+  integrity sha512-cEiJEAEoIbWfCZYKWhVwFuvPX1gETRYPw6LlaTKoxD3s2AkXzkCjnp6h0V77ozyqj0jakteJ4YqDJT830+lVGw==
+
 js-sha3@0.8.0:
   version "0.8.0"
   resolved "https://registry.yarnpkg.com/js-sha3/-/js-sha3-0.8.0.tgz#b9b7a5da73afad7dedd0f8c463954cbde6818840"
@@ -2604,6 +2661,11 @@ natural-compare@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
+
+next-themes@^0.3.0:
+  version "0.3.0"
+  resolved "https://registry.yarnpkg.com/next-themes/-/next-themes-0.3.0.tgz#b4d2a866137a67d42564b07f3a3e720e2ff3871a"
+  integrity sha512-/QHIrsYpd6Kfk7xakK4svpDI5mmXP0gfvCoJdGpZQ2TOrQZmsW0QxjaiLn8wbIKjtm4BTSqLoix4lxYYOnLJ/w==
 
 next-tick@^1.1.0:
   version "1.1.0"
@@ -2997,6 +3059,11 @@ regexp.prototype.flags@^1.5.2:
     es-errors "^1.3.0"
     set-function-name "^2.0.1"
 
+rehackt@^0.0.3:
+  version "0.0.3"
+  resolved "https://registry.yarnpkg.com/rehackt/-/rehackt-0.0.3.tgz#1ea454620d4641db8342e2db44595cf0e7ac6aa0"
+  integrity sha512-aBRHudKhOWwsTvCbSoinzq+Lej/7R8e8UoPvLZo5HirZIIBLGAgdG7SL9QpdcBoQ7+3QYPi3lRLknAzXBlhZ7g==
+
 resolve-from@^4.0.0:
   version "4.0.0"
   resolved "https://registry.yarnpkg.com/resolve-from/-/resolve-from-4.0.0.tgz#4abcd852ad32dd7baabfe9b40e00a36db5f392e6"
@@ -3222,6 +3289,7 @@ string.prototype.trimstart@^1.0.8:
     es-object-atoms "^1.0.0"
 
 "strip-ansi-cjs@npm:strip-ansi@^6.0.1", strip-ansi@^6.0.0, strip-ansi@^6.0.1:
+  name strip-ansi-cjs
   version "6.0.1"
   resolved "https://registry.yarnpkg.com/strip-ansi/-/strip-ansi-6.0.1.tgz#9e26c63d30f53443e9489495b2105d37b67a85d9"
   integrity sha512-Y38VPSHcqkFrCpFnQ9vuSXmquuv5oXOKpGeT6aGrr3o3Gc9AlVa6JBfUSOCnbxGGZF+/0ooI7KrPuUSztUdU5A==
@@ -3282,7 +3350,7 @@ supports-preserve-symlinks-flag@^1.0.0:
   resolved "https://registry.yarnpkg.com/supports-preserve-symlinks-flag/-/supports-preserve-symlinks-flag-1.0.0.tgz#6eda4bd344a3c94aea376d4cc31bc77311039e09"
   integrity sha512-ot0WnXS9fgdkgIcePe6RHNk1WA8+muPa6cSjeR3V8K27q9BB1rTE3R1p7Hv0z1ZyAc8s6Vvv8DIyWf681MAt0w==
 
-tailwindcss@^3.3.0:
+tailwindcss@^3.3.0, tailwindcss@^3.4.3:
   version "3.4.3"
   resolved "https://registry.yarnpkg.com/tailwindcss/-/tailwindcss-3.4.3.tgz#be48f5283df77dfced705451319a5dffb8621519"
   integrity sha512-U7sxQk/n397Bmx4JHbJx/iSOOv5G+II3f1kpLpY2QeUv5DcPdcTsYLlusZfq1NthHS1c1cZoyFmmkex1rzke0A==
@@ -3478,6 +3546,11 @@ use-sync-external-store@1.2.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.0.tgz#7dbefd6ef3fe4e767a0cf5d7287aacfb5846928a"
   integrity sha512-eEgnFxGQ1Ife9bzYs6VLi8/4X6CObHMw9Qr9tPY43iKwsPw8xE8+EFsf/2cFZ5S3esXgpWgtSCtLNS41F+sKPA==
+
+use-sync-external-store@^1.2.0:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/use-sync-external-store/-/use-sync-external-store-1.2.2.tgz#c3b6390f3a30eba13200d2302dcdf1e7b57b2ef9"
+  integrity sha512-PElTlVMwpblvbNqQ82d2n6RjStvdSoNe9FG28kNfz3WiXilJm4DdNkEzRhCZuIDwY8U08WVihhGR5iRqAwfDiw==
 
 utf-8-validate@^5.0.2:
   version "5.0.10"
