@@ -26,11 +26,15 @@ export const ProfileCard = () => {
   const { logout } = useLogout();
 
   //#region sending-user-op
+  // use config values to initialize our smart account client
   const { client } = useSmartAccountClient({
     type: accountType,
     gasManagerConfig,
     opts,
   });
+
+  // provide the useSendUserOperation with a client to send a UO
+  // this hook provides us with a status, error, and a result
   const {
     sendUserOperation,
     sendUserOperationResult,
@@ -40,10 +44,14 @@ export const ProfileCard = () => {
 
   const send = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
+
+    // collect all the form values from the user input
     const formData = new FormData(evt.currentTarget);
     const target = formData.get("to") as Hex;
     const data = formData.get("data") as Hex;
     const value = formData.get("value") as string;
+
+    // send the user operation
     sendUserOperation({
       uo: { target, data, value: value ? BigInt(value) : 0n },
     });
