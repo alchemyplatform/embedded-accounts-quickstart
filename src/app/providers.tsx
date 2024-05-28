@@ -9,6 +9,7 @@ import { PropsWithChildren, Suspense } from "react";
 import { config, queryClient } from "@/config";
 import { ThemeProvider } from "next-themes";
 
+//#region providers
 export const Providers = ({
   initialState,
   children,
@@ -31,3 +32,4 @@ export const Providers = ({
     </ThemeProvider>
   );
 };
+//#endregion providers

@@ -11,8 +11,8 @@ import {
 } from "@alchemy/aa-core";
 import { QueryClient } from "@tanstack/react-query";
 
+//#region create-accounts-config
 export const chain = arbitrumSepolia;
-
 export const queryClient = new QueryClient();
 export const config = createConfig({
   rpcUrl: "/api/rpc/chain/" + chain.id,
@@ -23,7 +23,9 @@ export const config = createConfig({
   ssr: true,
   storage: cookieStorage,
 });
+//#endregion create-accounts-config
 
+//#region other-config-vars
 export const accountType: SupportedAccountTypes = "MultiOwnerModularAccount";
 export const gasManagerConfig: AlchemyGasManagerConfig = {
   policyId: process.env.NEXT_PUBLIC_ALCHEMY_GAS_MANAGER_POLICY_ID!,
@@ -32,3 +34,4 @@ type SmartAccountClienOptions = z.infer<typeof SmartAccountClientOptsSchema>;
 export const accountClientOptions: Partial<SmartAccountClienOptions> = {
   txMaxRetries: 20,
 };
+//#endregion other-config-vars

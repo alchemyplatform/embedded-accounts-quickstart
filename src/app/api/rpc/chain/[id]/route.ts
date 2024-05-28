@@ -1,5 +1,6 @@
 import { getChain } from "@alchemy/aa-core";
 
+//#region chains-route
 export async function POST(req: Request) {
   const id = req.url?.split("/").pop();
 
@@ -30,7 +31,9 @@ export async function POST(req: Request) {
     });
 
     if (!apiResponse.ok) {
-      const errorResult = await apiResponse.json().catch(() => ({ message: "Failed to fetch data" }));
+      const errorResult = await apiResponse
+        .json()
+        .catch(() => ({ message: "Failed to fetch data" }));
       return Response.json(errorResult);
     }
 
@@ -42,3 +45,4 @@ export async function POST(req: Request) {
     });
   }
 }
+//#endregion chains-route

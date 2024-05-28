@@ -6,6 +6,7 @@ import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import ThemeSwitch from "@/components/ui/theme-switch";
 import { useSignerStatus } from "@alchemy/aa-alchemy/react";
 
+//#region using-status
 export default function Home() {
   const { isInitializing, isAuthenticating, isConnected, status } =
     useSignerStatus();
@@ -25,3 +26,4 @@ export default function Home() {
     </main>
   );
 }
+//#endregion using-status

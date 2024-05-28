@@ -25,6 +25,7 @@ export const ProfileCard = () => {
   const { address } = useAccount({ type: accountType });
   const { logout } = useLogout();
 
+  //#region sending-user-op
   const { client } = useSmartAccountClient({
     type: accountType,
     gasManagerConfig,
@@ -47,6 +48,7 @@ export const ProfileCard = () => {
       uo: { target, data, value: value ? BigInt(value) : 0n },
     });
   };
+  //#endregion sending-user-op
 
   return (
     <Card>

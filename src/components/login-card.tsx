@@ -12,6 +12,7 @@ export const LogInCard = () => {
     (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value),
     [],
   );
+  //#region authenticating
   const { authenticate } = useAuthenticate();
   const { status } = useSignerStatus();
 
@@ -19,6 +20,7 @@ export const LogInCard = () => {
     evt.preventDefault();
     authenticate({ type: "email", email });
   };
+  //#endregion authenticating
 
   return (
     <Card>
