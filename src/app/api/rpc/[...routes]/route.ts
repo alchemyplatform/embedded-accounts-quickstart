@@ -1,8 +1,9 @@
 import { NextResponse } from "next/server";
 
+//#region signer-route
 export async function POST(
   req: Request,
-  { params }: { params: { routes: string[] } }
+  { params }: { params: { routes: string[] } },
 ) {
   const apiUrl = "https://api.g.alchemy.com";
   const apiKey = process.env.ALCHEMY_API_KEY;
@@ -10,7 +11,7 @@ export async function POST(
   if (apiKey == null) {
     return NextResponse.json(
       { error: "ALCHEMY_API_KEY is not set" },
-      { status: 500 }
+      { status: 500 },
     );
   }
 
@@ -26,10 +27,11 @@ export async function POST(
   });
 
   if (!res.ok) {
-    return NextResponse.json(await res.json().catch((e) => ({})), {
+    return NextResponse.json(await res.json().catch(() => ({})), {
       status: res.status,
     });
   }
 
   return NextResponse.json(await res.json());
 }
+//#endregion signer-route
