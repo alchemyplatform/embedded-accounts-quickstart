@@ -19,6 +19,7 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  // hydrate the initial state on the client
   const initialState = cookieToInitialState(
     config,
     headers().get("cookie") ?? undefined,

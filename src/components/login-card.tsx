@@ -14,17 +14,18 @@ export const LogInCard = () => {
   );
   //#region authenticating
   const { authenticate } = useAuthenticate();
-  const { status } = useSignerStatus();
-
   const login = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
     authenticate({ type: "email", email });
   };
+
+  const { status } = useSignerStatus();
+  const isAwaitingEmail = status === "AWAITING_EMAIL_AUTH";
   //#endregion authenticating
 
   return (
     <Card>
-      {status === "AWAITING_EMAIL_AUTH" ? (
+      {isAwaitingEmail ? (
         <div className="text-[18px] font-semibold">Check your email!</div>
       ) : (
         <form className="flex flex-col gap-8" onSubmit={login}>
