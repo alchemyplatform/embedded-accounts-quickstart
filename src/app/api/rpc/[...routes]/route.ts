@@ -21,7 +21,6 @@ export async function POST(
     method: "POST",
     headers: {
       Authorization: `Bearer ${apiKey}`,
-      ...req.headers,
     },
     body: JSON.stringify(body),
   });
