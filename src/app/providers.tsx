@@ -8,7 +8,7 @@ import { PropsWithChildren } from "react";
 import { config, queryClient } from "@/config";
 import { ThemeProvider } from "next-themes";
 
-//#region providers
+// [!region providers]
 export const Providers = ({
   initialState,
   children,
@@ -30,4 +30,4 @@ export const Providers = ({
     </ThemeProvider>
   );
 };
-//#endregion providers
+// [!endregion providers]

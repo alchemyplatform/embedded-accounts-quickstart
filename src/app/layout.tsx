@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   description: "Embedded Accounts Quickstart Guide",
 };
 
-//#region root-layout
+// [!region root-layout]
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -33,4 +33,4 @@ export default function RootLayout({
     </html>
   );
 }
-//#endregion root-layout
+// [!endregion root-layout]

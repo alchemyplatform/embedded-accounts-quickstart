@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 
-//#region signer-route
+// [!region signer-route]
 export async function POST(
   req: Request,
   { params }: { params: { routes: string[] } },
@@ -33,4 +33,4 @@ export async function POST(
 
   return NextResponse.json(await res.json());
 }
-//#endregion signer-route
+// [!endregion signer-route]
