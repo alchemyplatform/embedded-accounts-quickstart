@@ -6,7 +6,7 @@ import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import ThemeSwitch from "@/components/ui/theme-switch";
 import { useSignerStatus } from "@alchemy/aa-alchemy/react";
 
-//#region using-status
+// [!region using-status]
 export default function Home() {
   // use the various signer statuses to determine if we are:
   // loading - waiting for a request to resolve
@@ -30,4 +30,4 @@ export default function Home() {
     </main>
   );
 }
-//#endregion using-status
+// [!endregion using-status]

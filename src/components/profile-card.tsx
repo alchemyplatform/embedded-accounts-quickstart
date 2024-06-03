@@ -25,7 +25,7 @@ export const ProfileCard = () => {
   const { address } = useAccount({ type: accountType });
   const { logout } = useLogout();
 
-  //#region sending-user-op
+  // [!region sending-user-op]
   // use config values to initialize our smart account client
   const { client } = useSmartAccountClient({
     type: accountType,
@@ -56,7 +56,7 @@ export const ProfileCard = () => {
       uo: { target, data, value: value ? BigInt(value) : 0n },
     });
   };
-  //#endregion sending-user-op
+  // [!endregion sending-user-op]
 
   return (
     <Card>

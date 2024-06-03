@@ -1,6 +1,6 @@
 import { getChain } from "@alchemy/aa-core";
 
-//#region chains-route
+// [!region chains-route]
 export async function POST(req: Request) {
   const id = req.url?.split("/").pop();
 
@@ -45,4 +45,4 @@ export async function POST(req: Request) {
     });
   }
 }
-//#endregion chains-route
+// [!endregion chains-route]

@@ -12,7 +12,7 @@ export const LogInCard = () => {
     (e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value),
     [],
   );
-  //#region authenticating
+  // [!region authenticating]
   const { authenticate } = useAuthenticate();
   const login = (evt: FormEvent<HTMLFormElement>) => {
     evt.preventDefault();
@@ -21,7 +21,7 @@ export const LogInCard = () => {
 
   const { status } = useSignerStatus();
   const isAwaitingEmail = status === "AWAITING_EMAIL_AUTH";
-  //#endregion authenticating
+  // [!endregion authenticating]
 
   return (
     <Card>

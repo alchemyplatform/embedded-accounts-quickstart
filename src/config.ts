@@ -11,7 +11,7 @@ import {
 } from "@alchemy/aa-core";
 import { QueryClient } from "@tanstack/react-query";
 
-//#region create-accounts-config
+// [!region create-accounts-config]
 // NOTE: feel free to change the chain here!
 export const chain = arbitrumSepolia;
 export const config = createConfig({
@@ -25,9 +25,9 @@ export const config = createConfig({
   ssr: true,
   storage: cookieStorage,
 });
-//#endregion create-accounts-config
+// [!endregion create-accounts-config]
 
-//#region other-config-vars
+// [!region other-config-vars]
 // provide a query client for use by the alchemy accounts provider
 export const queryClient = new QueryClient();
 // configure the account type we wish to use once
@@ -41,4 +41,4 @@ type SmartAccountClienOptions = z.infer<typeof SmartAccountClientOptsSchema>;
 export const accountClientOptions: Partial<SmartAccountClienOptions> = {
   txMaxRetries: 20,
 };
-//#endregion other-config-vars
+// [!endregion other-config-vars]
