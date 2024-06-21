@@ -4,7 +4,7 @@ import { LogInCard } from "@/components/login-card";
 import { ProfileCard } from "@/components/profile-card";
 import { LoadingSpinner } from "@/components/ui/loading-spinner";
 import ThemeSwitch from "@/components/ui/theme-switch";
-import { useSignerStatus } from "@alchemy/aa-alchemy/react";
+import { useSignerStatus } from "@account-kit/react";
 
 // [!region using-status]
 export default function Home() {

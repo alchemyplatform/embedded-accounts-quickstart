@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
+import { withAccountKitUi } from "@account-kit/react/tailwind";
 
-const config: Config = {
+const config: Config = withAccountKitUi({
   darkMode: "class",
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
@@ -17,5 +18,6 @@ const config: Config = {
     },
   },
   plugins: [],
-};
+});
+
 export default config;

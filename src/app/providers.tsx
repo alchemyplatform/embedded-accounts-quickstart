@@ -3,9 +3,9 @@
 import {
   AlchemyAccountProvider,
   AlchemyAccountsProviderProps,
-} from "@alchemy/aa-alchemy/react";
+} from "@account-kit/react";
 import { PropsWithChildren } from "react";
-import { config, queryClient } from "@/config";
+import { config, queryClient, uiConfig } from "@/config";
 import { ThemeProvider } from "next-themes";
 
 // [!region providers]
@@ -24,6 +24,7 @@ export const Providers = ({
         config={config}
         queryClient={queryClient}
         initialState={initialState}
+        uiConfig={uiConfig}
       >
         {children}
       </AlchemyAccountProvider>

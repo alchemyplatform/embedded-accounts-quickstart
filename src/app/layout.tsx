@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { Providers } from "./providers";
-import { cookieToInitialState } from "@alchemy/aa-alchemy/config";
+import { cookieToInitialState } from "@account-kit/core";
 import { headers } from "next/headers";
 import { config } from "@/config";
 

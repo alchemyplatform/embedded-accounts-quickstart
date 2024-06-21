@@ -7,7 +7,7 @@ import {
   useSendUserOperation,
   useSmartAccountClient,
   useUser,
-} from "@alchemy/aa-alchemy/react";
+} from "@account-kit/react";
 import {
   chain,
   accountType,

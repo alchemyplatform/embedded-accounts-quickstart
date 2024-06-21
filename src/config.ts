@@ -1,14 +1,10 @@
-import { z } from "zod";
-import { AlchemyGasManagerConfig } from "@alchemy/aa-alchemy";
 import {
   SupportedAccountTypes,
   cookieStorage,
   createConfig,
-} from "@alchemy/aa-alchemy/config";
-import {
-  SmartAccountClientOptsSchema,
-  arbitrumSepolia,
-} from "@alchemy/aa-core";
+} from "@account-kit/core";
+import { type AlchemyAccountsProviderProps } from "@account-kit/react";
+import { arbitrumSepolia } from "@alchemy/aa-core";
 import { QueryClient } from "@tanstack/react-query";
 
 // [!region create-accounts-config]
@@ -28,17 +24,30 @@ export const config = createConfig({
 // [!endregion create-accounts-config]
 
 // [!region other-config-vars]
+// There are 2 sections which means: email will be the top portion of the Modal
+// and the other 2 will fall below a divider line. Each section is separated by
+// an -or- divider
+export const uiConfig: AlchemyAccountsProviderProps["uiConfig"] = {
+  auth: {
+    sections: [
+      [{ type: "email" }],
+      [{ type: "passkey" }, { type: "injected" }],
+    ],
+    // after a user signs up, this will prompt the user to add a passkey
+    // to their account
+    addPasskeyOnSignup: true,
+  },
+};
 // provide a query client for use by the alchemy accounts provider
 export const queryClient = new QueryClient();
 // configure the account type we wish to use once
 export const accountType: SupportedAccountTypes = "MultiOwnerModularAccount";
 // setup the gas policy for sponsoring transactions
-export const gasManagerConfig: AlchemyGasManagerConfig = {
+export const gasManagerConfig = {
   policyId: process.env.NEXT_PUBLIC_ALCHEMY_GAS_MANAGER_POLICY_ID!,
 };
 // additional options for our account client
-type SmartAccountClienOptions = z.infer<typeof SmartAccountClientOptsSchema>;
-export const accountClientOptions: Partial<SmartAccountClienOptions> = {
+export const accountClientOptions = {
   txMaxRetries: 20,
 };
 // [!endregion other-config-vars]

@@ -1,13 +1,17 @@
 import { LoadingSpinner } from "./ui/loading-spinner";
-import { SendUserOperationResult } from "@alchemy/aa-core";
 import { chain } from "@/config";
+import { Hex } from "viem";
 
 export const OpStatus = ({
   sendUserOperationResult,
   isSendingUserOperation,
   isSendUserOperationError,
 }: {
-  sendUserOperationResult: SendUserOperationResult | undefined;
+  sendUserOperationResult:
+    | {
+        hash: Hex;
+      }
+    | undefined;
   isSendingUserOperation: boolean;
   isSendUserOperationError: Error | null;
 }) => {
