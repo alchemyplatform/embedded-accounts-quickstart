@@ -1,4 +1,5 @@
 import { getChain } from "@alchemy/aa-core";
+import { NextResponse } from "next/server";
 
 // [!region chains-route]
 export async function POST(req: Request) {
@@ -6,7 +7,7 @@ export async function POST(req: Request) {
 
   const chain = getChain(parseInt(id as string));
   if (!chain) {
-    return new Response(`Chain not found: ${chain}`, {
+    return new NextResponse(`Chain not found: ${chain}`, {
       status: 404,
     });
   }
@@ -14,7 +15,7 @@ export async function POST(req: Request) {
 
   const apiKey = process.env.ALCHEMY_API_KEY;
   if (!apiKey) {
-    return new Response("ALCHEMY_API_KEY is not set", {
+    return new NextResponse("ALCHEMY_API_KEY is not set", {
       status: 500,
     });
   }
@@ -34,13 +35,13 @@ export async function POST(req: Request) {
       const errorResult = await apiResponse
         .json()
         .catch(() => ({ message: "Failed to fetch data" }));
-      return Response.json(errorResult);
+      return NextResponse.json(errorResult);
     }
 
     const result = await apiResponse.json();
-    return Response.json(result);
+    return NextResponse.json(result);
   } catch (error) {
-    return new Response("Server error occurred", {
+    return new NextResponse("Server error occurred", {
       status: 500,
     });
   }
