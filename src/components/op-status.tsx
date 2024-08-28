@@ -1,13 +1,15 @@
-import { LoadingSpinner } from "./ui/loading-spinner";
-import { SendUserOperationResult } from "@alchemy/aa-core";
 import { chain } from "@/config";
+import { useSendUserOperation } from "@account-kit/react";
+import { LoadingSpinner } from "./ui/loading-spinner";
 
 export const OpStatus = ({
   sendUserOperationResult,
   isSendingUserOperation,
   isSendUserOperationError,
 }: {
-  sendUserOperationResult: SendUserOperationResult | undefined;
+  sendUserOperationResult:
+    | ReturnType<typeof useSendUserOperation>["sendUserOperationResult"]
+    | undefined;
   isSendingUserOperation: boolean;
   isSendUserOperationError: Error | null;
 }) => {
