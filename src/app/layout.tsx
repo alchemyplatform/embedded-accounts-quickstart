@@ -1,10 +1,10 @@
+import { config } from "@/config";
+import { cookieToInitialState } from "@account-kit/core";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
 import { Providers } from "./providers";
-import { cookieToInitialState } from "@alchemy/aa-alchemy/config";
-import { headers } from "next/headers";
-import { config } from "@/config";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -1,24 +1,19 @@
 "use client";
 
-import React, { FormEvent } from "react";
+import { accountType, chain, accountClientOptions as opts } from "@/config";
 import {
   useAccount,
   useLogout,
   useSendUserOperation,
   useSmartAccountClient,
   useUser,
-} from "@alchemy/aa-alchemy/react";
-import {
-  chain,
-  accountType,
-  gasManagerConfig,
-  accountClientOptions as opts,
-} from "@/config";
-import { Card } from "./ui/card";
-import { Button } from "./ui/button";
-import { Input } from "./ui/input";
+} from "@account-kit/react";
+import { FormEvent } from "react";
 import { Hex } from "viem";
 import { OpStatus } from "./op-status";
+import { Button } from "./ui/button";
+import { Card } from "./ui/card";
+import { Input } from "./ui/input";
 
 export const ProfileCard = () => {
   const user = useUser();
@@ -29,7 +24,6 @@ export const ProfileCard = () => {
   // use config values to initialize our smart account client
   const { client } = useSmartAccountClient({
     type: accountType,
-    gasManagerConfig,
     opts,
   });
 

@@ -1,12 +1,12 @@
 "use client";
 
+import { config, queryClient } from "@/config";
 import {
   AlchemyAccountProvider,
   AlchemyAccountsProviderProps,
-} from "@alchemy/aa-alchemy/react";
-import { PropsWithChildren } from "react";
-import { config, queryClient } from "@/config";
+} from "@account-kit/react";
 import { ThemeProvider } from "next-themes";
+import { PropsWithChildren } from "react";
 
 // [!region providers]
 export const Providers = ({
