@@ -1,6 +1,6 @@
 import { SmartAccountClientOptsSchema } from "@aa-sdk/core";
 import { SupportedAccountTypes } from "@account-kit/core";
-import { arbitrumSepolia } from "@account-kit/infra";
+import { arbitrumSepolia, alchemy } from "@account-kit/infra";
 import { cookieStorage, createConfig } from "@account-kit/react";
 import { QueryClient } from "@tanstack/react-query";
 import { z } from "zod";
@@ -11,7 +11,7 @@ export const chain = arbitrumSepolia;
 export const config = createConfig(
   {
     // this is for requests to the specific chain RPC
-    rpcUrl: "/api/rpc/chain/" + chain.id,
+    transport: alchemy({ rpcUrl: "/api/rpc/chain/" + chain.id }),
     signerConnection: {
       // this is for Alchemy Signer requests
       rpcUrl: "/api/rpc/",

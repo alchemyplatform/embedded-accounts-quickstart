@@ -1,0 +1,10 @@
+{
+    "extends": ["//"],
+    "tasks": {
+      "build": {
+        "env": ["ALCHEMY_API_KEY", "ALCHEMY_GAS_MANAGER_POLICY_ID"],
+        "outputs": [".next/**", "!.next/cache/**"],
+        "dependsOn": ["^build"]
+      }
+    }
+  }
